@@ -1,0 +1,30 @@
+name: senal-de-commits
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/senal.svg?color_snake=#3cf2c4&color_dots=#13261d,#1f3a2e,#c8894a,#f5c542,#3cf2c4
+
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "Actualizar señal de commits"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
