@@ -1,4 +1,4 @@
-name: senal-de-commits
+﻿name: senal-de-commits
 
 on:
   schedule:
@@ -17,16 +17,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/senal.svg?color_snake=#3cf2c4&color_dots=#13261d,#1f3a2e,#c8894a,#f5c542,#3cf2c4
-
       - name: Lecturas de actividad y lenguajes
         run: python3 .github/scripts/lecturas.py dist
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/senal.svg?color_snake=#3cf2c4&color_dots=#13261d,#1f3a2e,#c8894a,#f5c542,#3cf2c4
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:
