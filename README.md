@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 <img src="assets/header.svg" width="100%" alt="Abraham Umanzor — del código al circuito"/>
 
@@ -56,8 +56,8 @@
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Chester21U&show_icons=true&hide_border=true&bg_color=07110d&title_color=3cf2c4&text_color=d7e4dc&icon_color=f5c542&ring_color=3cf2c4&custom_title=Lectura%20CH1%20%C2%B7%20actividad" height="165" alt="stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Chester21U&layout=compact&hide_border=true&bg_color=07110d&title_color=3cf2c4&text_color=d7e4dc&custom_title=Lectura%20CH2%20%C2%B7%20lenguajes" height="165" alt="lenguajes"/>
+<img src="https://raw.githubusercontent.com/Chester21U/Chester21U/output/stats.svg" width="49%" alt="Actividad"/>
+<img src="https://raw.githubusercontent.com/Chester21U/Chester21U/output/lenguajes.svg" width="49%" alt="Lenguajes"/>
 
 <img src="https://raw.githubusercontent.com/Chester21U/Chester21U/output/senal.svg" width="100%" alt="Señal de commits"/>
 

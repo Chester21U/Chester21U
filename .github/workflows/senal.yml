@@ -15,16 +15,23 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
+
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/senal.svg?color_snake=#3cf2c4&color_dots=#13261d,#1f3a2e,#c8894a,#f5c542,#3cf2c4
 
+      - name: Lecturas de actividad y lenguajes
+        run: python3 .github/scripts/lecturas.py dist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
-          commit_message: "Actualizar señal de commits"
+          commit_message: "Actualizar lecturas"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
